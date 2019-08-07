@@ -1,0 +1,39 @@
+package test;
+import java.io.*;
+import java.util.Scanner;
+
+public class HelloWorld {
+	public static void main(String[] args) throws IOException { 
+	 int a;
+	 char ch;
+	 String str;
+	 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+	 Scanner in=new Scanner(System.in);
+	 a=in.nextInt();
+	 ch=(char)br.read();
+	 str=(String)br.readLine();
+	 System.out.println(a);    //先输入整数，然后回车
+	 System.out.println(ch);   //输入字符，char和String一起输入，但String会输出空格
+	 System.out.println(str);  //输入字符串
+    }
+
+//输入------------------------------------------
+1
+asfddasf
+//输出------------------------------------------
+1
+a
+sfddasf
+//---------------------------------------------
+
+	/*
+	 * public static void main(String args[]) {    //用write（）方法进行输出
+	 * int b; b = 'A';
+	 * System.out.write(b);
+	 * System.out.write('\n'); 
+	 * } 
+	 */
+//输出-----------------------------------------
+A
+//--------------------------------------------
+}
