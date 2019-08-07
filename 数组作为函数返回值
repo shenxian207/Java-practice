@@ -1,0 +1,26 @@
+package test;
+
+public class HelloWorld {
+	public static int[] sort(int[] a,int n) {    //返回数组的形式 int[]
+		int temp;
+		for(int i=0;i<n;i++) {
+			for(int j=i;j<n;j++) {
+				if(a[i]>a[j]) {
+					temp=a[i];
+					a[i]=a[j];
+					a[j]=temp;
+				}
+			}
+		}
+		return a;
+	}
+	public static void main(String[] args) {
+		int[] a=new int[] {1,6,2,5,4};
+		int n=5;
+		a=sort(a,n);                     //函数的调用，返回值
+		for(int i:a) {
+			System.out.println(i);
+		}
+	}
+}
+
