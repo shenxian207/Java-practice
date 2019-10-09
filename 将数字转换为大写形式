@@ -1,0 +1,20 @@
+package shen;
+import java.util.Scanner;
+public class shen{
+public static void main(String[] args){
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Please enter your number:");
+	double d=sc.nextDouble();
+	int n=(int)Math.round(d*100);
+	String[] ma={"分","角","元","拾","佰","仟","万","拾","佰"};
+	char[] ca={'零','壹','贰','叄','肆','伍','陆','柒','捌','玖'};
+	String s="";
+	int i=0;
+	while(n!=0){
+		s=s+ma[i]+ca[n%10];
+		n=n/10;
+		i++;
+	}
+	System.out.println(new StringBuffer(s).reverse());
+    }
+}
