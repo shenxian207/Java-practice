@@ -1,0 +1,155 @@
+package shen_w10;
+
+public class Product implements Comparable<Product> {
+	protected String title;
+	protected float price;
+	protected float sales;
+	protected static int count;
+	
+	public Product(String title, float price) {
+	    super();
+	    this.title=title;
+	    this.price = price;
+	
+	}
+	@Override
+	public String toString() {
+		return "Product [title=" + title + ", price=" + price + "]";
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public float getPrice() {
+		return price;
+	}
+	public void setPrice(float price) {
+		this.price = price;
+	}
+	public float getSales() {
+		return sales;
+	}
+	public void setSales(float sales) {
+		this.sales = sales;
+	}
+	public static int getCount() {
+		return count;
+	}
+	public static void setCount(int count) {
+		Product.count = count;
+	}
+	@Override
+	public int compareTo(Product o) {
+		// TODO Auto-generated method stub
+		return new Float(this.getPrice()).compareTo(o.getPrice());
+	}
+	
+
+}
+
+
+package shen_w10;
+
+public class Mobile extends Product{
+	private String type;
+	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public Mobile(String title, float price,String type) {
+		super(title, price);
+		this.type=type;
+	}
+
+	@Override
+	public String toString() {
+		String tmp=super.toString();
+		return type+tmp;
+	}	
+}
+
+
+package shen_w10;
+
+public class MP3player extends Product {
+	private String artist;
+	
+	public String getArtist() {
+		return artist;
+	}
+
+	public void setArtist(String artist) {
+		this.artist = artist;
+	}
+	
+	
+	public MP3player(String title, float price, String artist) {
+		super(title, price);
+		this.artist = artist;
+	}
+
+	
+	@Override
+	public String toString() {
+		String text=this.artist+super.toString();
+		return text;
+	}
+}
+
+
+package shen_w10;
+
+public class MP3player extends Product {
+	private String artist;
+	
+	public String getArtist() {
+		return artist;
+	}
+
+	public void setArtist(String artist) {
+		this.artist = artist;
+	}
+	
+	
+	public MP3player(String title, float price, String artist) {
+		super(title, price);
+		this.artist = artist;
+	}
+
+	
+	@Override
+	public String toString() {
+		String text=this.artist+super.toString();
+		return text;
+	}
+}
+
+
+package shen_w10;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Testset {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Mobile m1=new Mobile("Xiaomi",3500,"5G");
+		Mobile m2=new Mobile("Apple",3500,"5G");
+		Mobile m3=new Mobile("Huawei",3500,"5G");
+		Set<Mobile> set= new HashSet<Mobile>();
+		set.add(m1);
+		set.add(m2);
+		set.add(m3);
+		System.out.println(set);
+	}
+
+}
+
